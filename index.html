@@ -8,9 +8,24 @@
   <title>ZION</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    
- 
+.hero {
+      background-image: url("../código/img/fundo.jpeg");
+      background-size: cover;      /* mostra a imagem inteira */
+      background-position: center;   /* centraliza */
+      background-repeat: no-repeat;  /* não repete */
+      height: 100vh;                 /* ocupa toda a tela */
+    }
 
+    section {
+      position: relative; 
+      background-image: url("../código/img/fundo.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* imagem fixa */
+      min-height: 100vh;
+      z-index: 1;
+  }
   </style>
 </head>
 <body class="bg-black text-white fd">
@@ -273,3 +288,4 @@
 </body>
 <!-- Site desenvolvido por Isabella Barreto Menezes da Silva -->
 </html>
+
