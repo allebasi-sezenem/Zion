@@ -1,0 +1,248 @@
+body {
+      font-family: 'Arial', sans-serif;
+    }
+
+    .text-lg {
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* ajuste a intensidade do escuro aqui */
+      z-index: 0; /* fica atrás do conteúdo */
+    }
+
+    .hero {
+      position: relative; /* necessário para o overlay */
+      z-index: 1; /* conteúdo acima do overlay */
+    }
+
+    .hero {
+      background-image: url("../código/img/fundo.jpeg");
+      background-size: cover;      /* mostra a imagem inteira */
+      background-position: center;   /* centraliza */
+      background-repeat: no-repeat;  /* não repete */
+      height: 100vh;                 /* ocupa toda a tela */
+    }
+
+    section {
+      position: relative; 
+      background-image: url("../código/img/fundo.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* imagem fixa */
+      min-height: 100vh;
+      z-index: 1;
+  }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* escurece o fundo */
+      z-index: 0;
+    }
+
+    section > * {
+      position: relative; 
+      z-index: 1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+   table {
+      background-color: #14292E;
+      width: 80%; /* tabela menor que 100% da tela */
+      max-width: 900px;
+      border-collapse: separate;
+      margin: 20px auto; /* centraliza horizontalmente */
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+  th, td {
+      border: 1px solid #444;
+      padding: 5px;       /* menos espaçamento */
+      text-align: center;
+      vertical-align: top;
+      height: 60px;       /* altura menor */
+      font-size: 0.8em;  /* texto menor */
+    }
+
+  .evento, .cultao {
+      font-size: 0.75em;  /* texto do evento menor */
+      margin-top: 3px;
+      padding: 1px 3px;
+    }
+  .evento {
+      background-color: #e65a19; /* laranja */
+      color: #fff;
+      margin-top: 5px;
+      padding: 2px 5px;
+      border-radius: 4px;
+      display: block;
+      font-size: 0.9em;
+      max-width: 100px;
+  }
+  .cultao {
+      background-color: #b91c1c; /* vermelho */
+      color: #fff;
+      margin-top: 5px;
+      padding: 2px 5px;
+      border-radius: 4px;
+      display: block;
+      font-size: 0.9em;
+      max-width: 110px;
+  }
+
+  .meninas {
+      background-color: #b91c7d; /* rosa */
+      color: #fff;
+      margin-top: 5px;
+      padding: 2px 5px;
+      border-radius: 4px;
+      display: block;
+      font-size: 0.9em;
+      max-width: 110px;
+  }
+
+  .meninos {
+      background-color: #1e40af; /* azul */
+      color: #fff;
+      margin-top: 5px;
+      padding: 2px 5px;
+      border-radius: 4px;
+      display: block;
+      font-size: 0.9em;
+      max-width: 110px;
+  }
+
+  .evento, .cultao, .meninas, .meninos {
+      display: block;
+      margin: 3px auto;       /* centraliza horizontalmente dentro da célula */
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      max-width: 110px;       /* limite de largura */
+      text-align: center;     /* centraliza o texto dentro do span */
+      word-wrap: break-word;  
+      overflow-wrap: break-word;
+}
+
+th:first-child {
+  border-top-left-radius: 20px;
+}
+th:last-child {
+  border-top-right-radius: 20px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+/* ----------- RESPONSIVIDADE ----------- */
+
+/* NAVBAR em telas pequenas */
+@media (max-width: 768px) {
+
+nav ul {
+    display: flex;
+    /* flex-direction: unset; */
+    /* justify-content: flex-start; */
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    background: transparent;
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 10px;
+}
+  nav {
+    padding: 0.3rem 0.5rem;
+  }
+
+  nav img, h1 {
+    display: none;
+  }
+
+  nav h1 {
+    font-size: 0.8rem; /* título menor */
+    margin-left: 4px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* mantém tudo na linha */
+    flex-wrap: wrap;             /* quebra linha se não couber */
+    gap: 0.4rem;                 /* menos espaço entre links */
+    background: transparent;
+    position: static;
+    width: 100%;                 /* ocupa largura do celular */
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    font-size: 0.7rem;   /* fonte compacta */
+    padding: 2px 3px;    /* menos espaço interno */
+  }
+
+  .w-1\/2 {
+    min-width: 70%;
+}
+
+section img {
+    order: 2; 
+    margin-top: 1rem;
+  }
+
+  nav ul.show {
+    display: flex; /* aparece quando abrir */
+  }
+
+  nav .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+}
+
+/* Tabela em telas pequenas */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.75rem;
+  }
+
+  th, td {
+    padding: 8px 4px;
+  }
+}
